@@ -1,69 +1,71 @@
-# React + TypeScript + Vite
+<div align="center">
+  <h1>⚛️ React練習用コード（初級編）</h1>
+  
+  <p>
+    <img src="https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React">
+    <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+    <img src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  </p>
+  
+  <p><strong>下記の記事にて解説しています。</strong><br>
+  <a href="https://biz.addisteria.com/react_learning/)">https://biz.addisteria.com/react_learning/</a></p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+</div>
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ 含まれるReact技術
 
-## Expanding the ESLint configuration
+<table>
+  <tr>
+    <td><code>useState</code></td>
+    <td>状態管理</td>
+  </tr>
+  <tr>
+    <td><code>onClick, onChange</code></td>
+    <td>イベントハンドリング</td>
+  </tr>
+  <tr>
+    <td><code>map()</code></td>
+    <td>リスト表示</td>
+  </tr>
+  <tr>
+    <td><code>filter()</code></td>
+    <td>削除機能</td>
+  </tr>
+  <tr>
+    <td><code>TypeScript</code></td>
+    <td>型指定</td>
+  </tr>
+</table>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 ファイル構成
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+<table>
+  <thead>
+    <tr>
+      <th>ファイル</th>
+      <th>内容</th>
+      <th>学習ポイント</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Counter.tsx</code></td>
+      <td>カウンタ</td>
+      <td>useState基本</td>
+    </tr>
+    <tr>
+      <td><code>InputText.tsx</code></td>
+      <td>入力フォーム</td>
+      <td>onChange</td>
+    </tr>
+    <tr>
+      <td><code>ArrayDisplay.tsx</code></td>
+      <td>リスト表示・削除</td>
+      <td>map, filter</td>
+    </tr>
+  </tbody>
+</table>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
